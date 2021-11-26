@@ -2,7 +2,7 @@
 
 ## A themeable chat-like UI element for Angular 10+.
 
-### See [demo](https://akariv.github.io/hatool/)
+### See [demo](https://navinsaini.github.io/ngx-hatool/)
 
 ![screenshot](screenshot.png)
 
@@ -92,7 +92,7 @@ Other arguments are:
 - `customFunctions` is a map containing any custom functionality that is required in the script (see later in the `do` command)
 - `valueSetCallback` is a callback that is called whenever a value is written in to the record (which is useful in case you'd like to save the record to a backend server, for example).
 
-See a more detailed example [here](https://github.com/navinsaini/hatool/blob/master/projects/hatool-tester/src/app/chatbox/chatbox.component.ts).
+See a more detailed example [here](https://github.com/navinsaini/ngx-hatool/blob/master/projects/hatool-tester/src/app/chatbox/chatbox.component.ts).
 
 
 ## Script Syntax

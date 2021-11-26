@@ -13,20 +13,20 @@
     "web": "https://github.com/navinsaini"
   }],
   "demos": [
-    "https://akariv.github.io/hatool"
+    "https://navinsaini.github.io/ngx-hatool"
   ],
   "bugs": {
-    "web": "https://github.com/navinsaini/hatool/issues"
+    "web": "https://github.com/navinsaini/ngx-hatool/issues"
   },
   "repositories": [{
     "type": "git",
-    "url": "https://github.com/navinsaini/hatool.git"
+    "url": "https://github.com/navinsaini/ngx-hatool.git"
   }],
   "licenses": [{
     "name": "MIT",
-    "url": "https://github.com/navinsaini/hatool"
+    "url": "https://github.com/navinsaini/ngx-hatool"
   }],
-  "homepage": "https://github.com/navinsaini/hatool",
+  "homepage": "https://github.com/navinsaini/ngx-hatool",
   "peerDependencies": {
     "@angular/common": "~13.0.0",
     "@angular/core": "~13.0.0"
