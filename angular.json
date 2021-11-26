@@ -1,0 +1,173 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "ngx-hatool-tester": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "less"
+        }
+      },
+      "root": "projects/ngx-hatool-tester",
+      "sourceRoot": "projects/ngx-hatool-tester/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/ngx-hatool-tester",
+            "index": "projects/ngx-hatool-tester/src/index.html",
+            "main": "projects/ngx-hatool-tester/src/main.ts",
+            "polyfills": "projects/ngx-hatool-tester/src/polyfills.ts",
+            "tsConfig": "projects/ngx-hatool-tester/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/ngx-hatool-tester/src/favicon.ico",
+              "projects/ngx-hatool-tester/src/assets"
+            ],
+            "styles": [
+              "projects/ngx-hatool-tester/src/theme.less",
+              "projects/ngx-hatool-tester/src/styles.less"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/ngx-hatool-tester/src/environments/environment.ts",
+                  "with": "projects/ngx-hatool-tester/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "ngx-hatool-tester:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "ngx-hatool-tester:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ngx-hatool-tester:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-hatool-tester/src/test.ts",
+            "polyfills": "projects/ngx-hatool-tester/src/polyfills.ts",
+            "tsConfig": "projects/ngx-hatool-tester/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-hatool-tester/karma.conf.js",
+            "assets": [
+              "projects/ngx-hatool-tester/src/favicon.ico",
+              "projects/ngx-hatool-tester/src/assets"
+            ],
+            "styles": [
+              "projects/ngx-hatool-tester/src/theme.less",
+              "projects/ngx-hatool-tester/src/styles.less"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngx-hatool-tester/tsconfig.app.json",
+              "projects/ngx-hatool-tester/tsconfig.spec.json",
+              "projects/ngx-hatool-tester/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/ngx-hatool-tester/e2e/protractor.conf.js",
+            "devServerTarget": "ngx-hatool-tester:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "ngx-hatool-tester:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "ngx-hatool": {
+      "projectType": "library",
+      "root": "projects/ngx-hatool",
+      "sourceRoot": "projects/ngx-hatool/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/ngx-hatool/tsconfig.lib.json",
+            "project": "projects/ngx-hatool/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ngx-hatool/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-hatool/src/test.ts",
+            "tsConfig": "projects/ngx-hatool/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-hatool/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngx-hatool/tsconfig.lib.json",
+              "projects/ngx-hatool/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }},
+  "cli": {
+    "analytics": false
+  },
+  "defaultProject": "ngx-hatool-tester"
+}
